@@ -2,9 +2,9 @@
 
 This is the backend side of a real-time groupal chat app, based on discord, which I made purely as an academical project
 
-[Frontend Repository](https://github.com/chrisdadev/Cordia)
+[Frontend Repository](https://github.com/chrisdadev13/Cordia)
 
-[Live Demo]("https://cordia.vercel.app") :point_left:
+[Live Demo]("https://cordia.vercel.app/") :point_left:
 
 ## Endpoints
 
