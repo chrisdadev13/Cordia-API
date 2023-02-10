@@ -21,6 +21,8 @@ export default class GroupService {
       const decoded = jwt.verify(token, TOKEN_KEY) as any;
       group.creator = decoded.username;
 
+      await this.joinGroup(group._id.toString(), token);
+
       await group.save();
 
       return {
