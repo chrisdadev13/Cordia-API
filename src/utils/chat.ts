@@ -36,11 +36,10 @@ export default class Chat {
       });
 
       socket.on("send-message", (data) => {
-        const { username, group, message, time } = data;
+        const { username, group, message } = data;
         io.to(group).emit("send-message", {
           username: username,
           message: message,
-          time: time,
         });
         console.log(data);
       });
