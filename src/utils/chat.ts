@@ -22,8 +22,6 @@ export default class Chat {
     });
 
     io.on("connection", (socket) => {
-      console.log("User connected");
-
       socket.on("join-room", (data) => {
         const { username, invitation } = data;
         GroupModel.findById(invitation, (error: any, chatroom: any) => {
@@ -31,7 +29,6 @@ export default class Chat {
           if (!chatroom) return "Chatroom not found";
 
           socket.join(invitation);
-          console.log(`${username} joined the room ${invitation}`);
         });
       });
 
@@ -41,7 +38,6 @@ export default class Chat {
           username: username,
           message: message,
         });
-        console.log(data);
       });
 
       socket.on("disconnect", () => {
